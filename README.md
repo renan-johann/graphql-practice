@@ -1,1 +1,1 @@
-# GraphQL app with Node.js
+## GraphQL app with Node.js
