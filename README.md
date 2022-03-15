@@ -1,1 +1,1 @@
-# graphql-practice
+# GraphQL app with Node.js
