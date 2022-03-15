@@ -1,0 +1,16 @@
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+## only equivalent route 'get'
+type Query {
+  users: [User!]!
+  user(id: ID!): User
+}
+
+## only equivalent route 'post/put/delete'
+type Mutation {
+  createUser(name: String!, email: String!): User
+}
