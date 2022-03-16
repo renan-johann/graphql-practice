@@ -1,15 +1,22 @@
-const users = [
-    { id: 1, name: 'Renan', email: 'renan@gmail.com'},
-    { id: 2, name: 'Rodrigo', email: 'rodrigo@gmail.com'},
-]
+const User = require('./User');
 
 module.exports = {
+    
     Query: {
-        users: () => users,
-        user: () => users[0]
+        users: () => User.find(),
+        user: (_, { id }) => User.findById(id),
     },
 
     Mutation: {
-        createUser: () => users[0]
+        createUser: (_, { name, email }) => User.create({name, email}),
+        updateUser: (_, { id, name, email }) => { 
+            const author = find(authors, { id: authorId }); 
+            if (!author) {
+              throw new Error(`Couldn’t find author with id ${authorId}`);
+            }
+            author.firstName = firstName; 
+            author.lastName = lastName; 
+            return author;
+           }
     },
 }
